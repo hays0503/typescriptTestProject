@@ -1,0 +1,126 @@
+//Сброс стилей
+@mixin reset-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+//Скруглённые углы
+@mixin corner-rounding {
+	border-radius: 12px;
+	border: 0.5px solid rgba(255, 255, 255, 0.411);
+}
+
+//Задний фон
+.backgroundLoginForm {
+	@include reset-list;
+	width: 100%;
+	height: 100%;
+	background: rgba(2, 0, 36, 0.103);
+	background: radial-gradient(
+		circle,
+		rgba(2, 0, 36, 1) 0%,
+		rgba(9, 9, 121, 0.9724264705882353) 55%,
+		rgba(0, 212, 255, 1) 100%
+	);
+}
+
+.ContentBlock {
+	@include corner-rounding();
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba($color: #000000, $alpha: 0.8);
+	background-image: url("./pic/shied.png");
+	background-size: 35%;
+	background-repeat: no-repeat;
+	background-position-y: top;
+	background-position-x: center;
+	filter: brightness(80%) grayscale(10%);
+	padding: 200px;
+	color: antiquewhite;
+	@import url("https://fonts.googleapis.com/css?family=Prata");
+	#text {
+		font-family: Prata, serif;
+		text-align: center;
+		font-size: 35px;
+		color: rgb(0, 255, 255);
+		background-color: rgb(84, 84, 84);
+		text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+	}
+}
+
+// Центрирование
+.centerBlock {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+// Контент в линию
+.inLineBlock {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+//Разделитель для формы
+.formDataDivider10 {
+	gap: 10px;
+}
+
+//Разделитель для формы
+.formDataDivider20 {
+	gap: 20px;
+}
+
+//Разделитель для формы
+.formDataDivider30 {
+	gap: 30px;
+}
+
+.shied {
+	height: 10%;
+	width: 10%;
+}
+
+//Поле ввода для данных
+.inputArea {
+	@include corner-rounding;
+	height: 100%;
+	color: rgb(255, 255, 255);
+	background: rgba(0, 0, 0, 0);
+}
+
+.parallaxCss {
+	// --scale: 1.5;
+	--y: 0;
+	overflow: hidden;
+	#BodyWrapper {
+		margin: 0;
+		background-color: black;
+		outline: none;
+		border: none;
+	}
+}
+
+#wrapper {
+	width: 100vw;
+	height: 98vh;
+	#image {
+		width: 100vw;
+		height: 100vh;
+        // background-image: url("https://images.unsplash.com/photo-1539035104074-dee66086b5e3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjI0MX0&auto=format&fit=crop&w=2550&q=80");
+		
+		background-image: url("./pic/bg.jpg");
+		background-size: cover;
+		transform: translateX(var(--x)) translateY(var(--y)) scale(var(--scale));
+		transition: ease-out 0.7s;
+	}
+}
