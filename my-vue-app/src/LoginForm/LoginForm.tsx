@@ -38,7 +38,7 @@ export function LoginForm(){
                 <img id="image"/>   
                     <div className='ContentBlock'>
 
-                        <div className={"centerBlock"}>
+                        <div className={"centerBlock formDataDivider10"}>
                             <h1>Форма логина</h1>
                             <h2>У вас есть аккаунт ?</h2>
 
