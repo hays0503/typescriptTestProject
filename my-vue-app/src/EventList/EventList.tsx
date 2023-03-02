@@ -90,6 +90,24 @@ export function EventList() {
 	return (
 		<>
 			<table border={5}>
+				<tr>Сводная информация</tr>
+				<tr>
+					<td>fio</td>
+					<td>card</td>					
+				</tr>
+				{
+                    Employers["Employers"].map((Employer) => {						
+								return (
+									<tr>
+										<td>{Employer.fio}</td>
+										<td>{Employer.card}</td>
+									</tr>
+								);
+							})
+				}
+			</table>
+			<br />
+			<table border={5}>
 				<tr>Какая то проходная.......... Номер 1</tr>
 				<tr>
 					<td>pos</td>
