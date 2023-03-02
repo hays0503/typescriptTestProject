@@ -1,11 +1,14 @@
-import { useState } from 'react'
-import { LoginForm } from './LoginForm/LoginForm'
+import { useState } from "react";
+import { LoginForm } from "./LoginForm/LoginForm";
+import { EventList } from "./EventList/EventList";
 
 function App() {
-  return (
-  <div>
-    <LoginForm/>
-  </div>)
+	return (
+		<div>
+			{/* <LoginForm /> */}
+			<EventList />
+		</div>
+	);
 }
 
-export default App
+export default App;

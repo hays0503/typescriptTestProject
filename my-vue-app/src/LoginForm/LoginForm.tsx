@@ -1,13 +1,7 @@
-import React, { MouseEvent } from 'react';
-
+import React, { FormEventHandler, MouseEvent } from 'react';
 import './LoginFormStyle.css'
-import shied from './pic/shied.png'
-
-
 
 export function LoginForm(){
-
-
 
     const handleMouseMove = (event: MouseEvent) => {
         const el = document.getElementById("wrapper");
@@ -31,6 +25,16 @@ export function LoginForm(){
         document.documentElement.style.setProperty("--y", "0");
       };
 
+    const submitLogin = (e:React.SyntheticEvent) => {
+        e.preventDefault();
+        const target = e.target as typeof e.target & {
+        email: { value: string };
+        password: { value: string };
+        };
+        const email = target.email.value; // typechecks!
+        const password = target.password.value; // typechecks!
+    }
+
     return (<div className={"backgroundLoginForm"}>
         <div className={'parallaxCss'}>
             
@@ -49,7 +53,7 @@ export function LoginForm(){
                             <h1>Форма логина</h1>
                             <h2>У вас есть аккаунт ?</h2>
 
-                            <form className={"centerBlock formDataDivider10"} autoComplete="on" name="LoginForm" method="post">
+                            <form className={"centerBlock formDataDivider10"} onSubmit={submitLogin} autoComplete="on" name="LoginForm" method="post">
                                 <input className={"inputArea"} name="login" placeholder="Логин"/>                
                                 <input className={"inputArea"} name="password" placeholder="Пароль"/>
                                 <button className={"inputArea"}>Войти</button>      
